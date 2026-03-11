@@ -7,3 +7,208 @@ Backend API
 AI Model API
    ↓
 Response
+
+
+///////////////////
+Things to learn:
+
+What LLMs are
+
+Tokens
+
+Temperature
+
+Context window
+
+
+///////////////
+1. What an LLM Is
+
+LLM = Large Language Model
+
+It is a neural network trained on huge text data that can:
+
+generate text
+
+answer questions
+
+write code
+
+summarize information
+
+Examples:
+
+OpenAI GPT models
+
+Google Gemini
+
+Anthropic Claude
+
+Important idea:
+
+LLMs do not know facts like a database.
+They predict the next word based on patterns.
+
+Example:
+
+JavaScript is a ______ language
+
+Model predicts → programming
+
+2. How AI Applications Work
+
+Most AI applications follow this structure.
+
+Frontend (React)
+      ↓
+Backend (Node.js API)
+      ↓
+AI Model API
+      ↓
+Response to frontend
+
+Example flow:
+
+User asks:
+
+Explain React hooks
+
+System:
+
+React UI
+↓
+Node API
+↓
+AI model
+↓
+Generated answer
+↓
+Show in UI
+
+This is how:
+
+ChatGPT-like apps
+
+AI chatbots
+
+AI assistants
+
+are built.
+
+3. What Tokens Are
+
+AI models do not read full sentences.
+
+They read tokens.
+
+Example sentence:
+
+React hooks make state management easier
+
+Tokens might be:
+
+React
+hooks
+make
+state
+management
+easier
+
+Each token costs API usage.
+
+So developers must manage:
+
+token limits
+
+response size
+
+cost
+
+4. Temperature (AI Creativity)
+
+Temperature controls randomness.
+
+Example:
+
+Temperature 0.2
+
+Very factual
+consistent answers
+
+Temperature 0.8
+
+More creative
+more variation
+
+Typical settings:
+
+Use Case	Temperature
+coding	0.2
+explanations	0.4
+creative writing	0.8
+5. Your First AI API Request
+
+We will call an AI model using Node.js.
+
+Using:
+
+OpenAI API
+
+Step 1 Install package
+npm install openai
+Step 2 Create file
+ai-test.js
+Step 3 Code Example
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+  apiKey: "YOUR_API_KEY"
+});
+
+async function testAI() {
+
+  const response = await openai.chat.completions.create({
+    model: "gpt-4.1-mini",
+    messages: [
+      {
+        role: "user",
+        content: "Explain JavaScript closures in simple words"
+      }
+    ]
+  });
+
+  console.log(response.choices[0].message.content);
+}
+
+testAI();
+
+Run:
+
+node ai-test.js
+
+You will see an AI explanation printed.
+
+6. Small Exercise (Important)
+
+Try these prompts.
+
+Prompt 1
+
+Explain Node.js event loop
+
+Prompt 2
+
+Write a simple React counter component
+
+Prompt 3
+
+Generate a product description for running shoes
+
+This shows how AI behaves differently depending on prompts.
+
+7. What to understand Understand 
+✔ LLM concept
+✔ tokens
+✔ temperature
+✔ AI API workflow
+✔ basic API request
