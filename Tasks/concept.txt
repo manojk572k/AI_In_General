@@ -1,0 +1,9 @@
+Fast-Track Week Plan (AI for Full-Stack Developers)
+
+Frontend
+   ↓
+Backend API
+   ↓
+AI Model API
+   ↓
+Response
