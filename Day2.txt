@@ -1,0 +1,253 @@
+1️⃣ Prompt Basics
+
+A prompt is simply the instruction sent to an AI model.
+
+Example prompt:
+
+Explain JavaScript promises.
+
+But developers usually write better structured prompts.
+
+Better prompt:
+
+You are a senior JavaScript developer.
+Explain JavaScript promises in simple terms with an example.
+
+Why the second is better:
+
+defines expertise
+
+adds context
+
+specifies explanation style
+
+This process of designing better instructions is called prompt engineering.
+
+Why Prompt Engineering Matters
+
+AI output depends heavily on the quality of the prompt.
+
+Example:
+
+Prompt 1:
+
+Write a product description.
+
+Prompt 2:
+
+Write a short SEO-optimized product description for lightweight running shoes for beginner runners.
+
+Prompt 2 gives much more useful output.
+
+2️⃣ System Prompts
+
+AI conversations usually contain three roles.
+
+system
+user
+assistant
+System Prompt
+
+The system prompt defines the behavior of the AI.
+
+Example:
+
+You are a senior full-stack developer who explains programming clearly.
+
+After this instruction, the AI behaves like a developer tutor.
+
+Example Conversation
+
+System:
+
+You are a professional coding tutor.
+
+User:
+
+Explain JavaScript closures.
+
+Assistant response will follow the tutor style.
+
+Mental Model
+System prompt → personality / behavior
+User prompt   → question or task
+Assistant     → response
+
+Developers usually set the system prompt once for the application.
+
+Example chatbot:
+
+System: You are a customer support assistant.
+User: Where is my order?
+Assistant: Your order is being shipped.
+3️⃣ Structured Output Prompts
+
+Applications often need machine-readable data, not plain text.
+
+Developers ask the AI to return structured output like JSON.
+
+Example prompt:
+
+Generate a JSON object with:
+name
+description
+category
+
+Example response:
+
+{
+ "name": "Running Shoes",
+ "description": "Lightweight breathable running shoes",
+ "category": "sports"
+}
+
+This allows the backend to parse the response easily.
+
+Why Structured Output Is Important
+
+Backends often need to:
+
+store data
+
+filter results
+
+process responses automatically
+
+Structured outputs help with automation in APIs.
+
+Example Use Case
+
+In an e-commerce application:
+
+User input:
+
+Product: Running shoes
+Features: lightweight, breathable
+
+Prompt:
+
+Generate JSON with:
+title
+description
+marketing_tagline
+
+The backend stores the result directly in the database.
+
+4️⃣ Few-Shot Prompting
+
+Sometimes instructions alone are not enough.
+
+Developers show the AI examples.
+
+This is called few-shot prompting.
+
+Example Without Examples
+
+Prompt:
+
+Classify this sentence.
+Sentence: I enjoy running every morning.
+
+AI may return different answers:
+
+fitness
+exercise
+sports
+
+Not consistent.
+
+Example With Few-Shot
+
+Prompt:
+
+Classify sentences into categories.
+
+Sentence: I love cooking dinner.
+Category: cooking
+
+Sentence: I went for a run this morning.
+Category: fitness
+
+Sentence: I love playing football.
+Category:
+
+Expected result:
+
+sports
+
+Now the AI understands the pattern.
+
+Why Few-Shot Helps
+
+It improves:
+
+accuracy
+
+consistency
+
+formatting
+
+It is commonly used for:
+
+classification
+
+extraction
+
+formatting tasks
+
+5️⃣ Prompt Chaining
+
+Sometimes a single prompt cannot solve complex tasks.
+
+Developers split tasks into multiple prompts.
+
+This is called prompt chaining.
+
+Example Task
+
+User request:
+
+Summarize an article and generate insights.
+
+Instead of one big prompt:
+
+Developers chain prompts.
+
+Step 1:
+
+Summarize the article.
+
+Step 2:
+
+Generate 3 insights from this summary.
+
+Better results.
+
+Example for ShopLite
+
+User input:
+
+Product: Running shoes
+Features: lightweight, breathable
+
+Prompt chain:
+
+Step 1
+
+Generate a product description.
+
+Step 2
+
+Generate SEO keywords.
+
+Step 3
+
+Create a marketing tagline.
+
+The system produces:
+
+description
+
+keywords
+
+tagline
